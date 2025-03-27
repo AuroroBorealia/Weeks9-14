@@ -8,6 +8,8 @@ public class Knight : MonoBehaviour
     Animator animator;
     public float speed = 2;
     public bool canRUn = true;
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     void Start()
     {
@@ -41,5 +43,14 @@ public class Knight : MonoBehaviour
     {
         Debug.Log("The attack animation has just finished!");
         canRUn = true;
+    }
+
+    public void footLanded()
+    {
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+
     }
 }
