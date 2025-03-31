@@ -38,5 +38,7 @@ public class Player : MonoBehaviour
         {
             transform.position += transform.up * directionY * speed * Time.deltaTime;
         }
+
+
     }
 }
