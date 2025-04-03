@@ -9,6 +9,8 @@ public class Knight : MonoBehaviour
     public float speed = 2;
     public bool canRUn = true;
 
+  
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
