@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class Knight : MonoBehaviour
     public float speed = 2;
     public bool canRUn = true;
 
-  
+    public CinemachineImpulseSource impulseSource;
 
     void Start()
     {
@@ -29,12 +30,12 @@ public class Knight : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             canRUn = false;
+            impulseSource.GenerateImpulse();
         }
 
         if(canRUn == true)
         {
             transform.position += transform.right * direction * speed * Time.deltaTime;
-
         }
 
     }
