@@ -32,7 +32,7 @@ public class Knight : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             canRUn = false;
-            impulseSource.GenerateImpulse();
+            
         }
 
         if(canRUn == true)
@@ -54,7 +54,7 @@ public class Knight : MonoBehaviour
         {
             audioSource.PlayOneShot(clip);
         }
-        
+        impulseSource.GenerateImpulse();
 
     }
 }
