@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class Player : MonoBehaviour
 {
     SpriteRenderer sr;
     public float speed = 5;
+    public Collect collc;
 
     // Start is called before the first frame update
     void Start()
     {
+        collc.isCollected.AddListener(yippee);
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -44,6 +47,13 @@ public class Player : MonoBehaviour
             transform.position += transform.up * directionY * speed * Time.deltaTime;
         }
 
+        
 
     }
+    public void yippee()
+    {
+
+    }
+    
+
 }
