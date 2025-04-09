@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     SpriteRenderer sr;
     public float speed = 5;
     public Collect collc;
+    public AudioSource audSrc;
+    public AudioClip clip;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +55,11 @@ public class Player : MonoBehaviour
     }
     public void yippee()
     {
-
+        Debug.Log("Collected!");
+        if(audSrc.isPlaying == false)
+        {
+            audSrc.PlayOneShot(clip);
+        }
     }
     
 
